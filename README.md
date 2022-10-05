@@ -1,6 +1,6 @@
 # todoMvcSelenium
 
-How to build project.
+How to build project in Intelli J
 
 1. Clone project
 2. Setup maven plugin on intelli j
