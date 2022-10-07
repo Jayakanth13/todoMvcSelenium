@@ -17,5 +17,6 @@ Feature: feature to test login functionality
     Given user is on todomvc page
     When user types 'item1' on the 'What's needs to be done' text box and clicks enter
     And user is able to click the checkbox to clear the item called 'item1'
-    And  user types 'item2' on the 'What's needs to be done' text box and clicks enter
+    And user types 'item2' on the 'What's needs to be done' text box and clicks enter
+    Then user is able to click the checkbox to clear the item called 'item2'
 
