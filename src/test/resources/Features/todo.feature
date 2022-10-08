@@ -50,11 +50,6 @@ Feature: feature to todo mvc page functionality
     When user types '"task"' on the 'What's needs to be done' text box and clicks enter
     Then user checks that there is a list of with items '"task"'
 
-
-#    Given user is on todomvc page
-#    When user types 'item2' on the 'What's needs to be done' text box and clicks enter
-#    Then user is able to clear the item called 'item2' that is created by clicking on the X icon
-
     Given user is on todomvc page
     When user types 'item2' on the 'What's needs to be done' text box and clicks enter
     Then user is able to click the checkbox to clear the item called 'item2'
