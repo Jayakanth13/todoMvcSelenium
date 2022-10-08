@@ -1,6 +1,6 @@
-Feature: feature to test login functionality
+Feature: feature to todo mvc page functionality
 
-  Scenario: Check login is successful
+  Scenario: Check todo task creation functionality is
 
     #Given user is on todomvc page
     #When user types 'item1' on the 'What's needs to be done' text box and clicks enter
@@ -20,13 +20,13 @@ Feature: feature to test login functionality
 #    Then user checks that there is a list of with items 'This is a sample task + "task"'
 
 
-    Given user is on todomvc page
-    When user types '"task"' on the 'What's needs to be done' text box and clicks enter
-    Then user checks that there is a list of with items '"task"'
+#    Given user is on todomvc page
+#    When user types 'item1' consecutively for "100" times and clicks enter
+#    Then user checks that there is a list of items 'item1' that are printed consecutively for "100" times
 
-    Given user is on todomvc page
-    When user types '"task"' on the 'What's needs to be done' text box and clicks enter
-    Then user checks that there is a list of with items '"task"'
+#    Given user is on todomvc page
+#    When user types '"task"' on the 'What's needs to be done' text box and clicks enter
+#    Then user checks that there is a list of with items '"task"'
 
 
    # Given user is on todomvc page

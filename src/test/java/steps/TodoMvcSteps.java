@@ -54,6 +54,22 @@ public class TodoMvcSteps {
         Assert.assertEquals(all.size()+active.size()+completed.size(),0);
     }
 
+
+    @When("user types {string} consecutively for {string} times and clicks enter")
+    public void user_types_consecutively_for_times_and_clicks_enter(String data, String noOfTimes) {
+        // Write code here that turns the phrase above into concrete actions
+        for(int i=0;i<Integer.parseInt(noOfTimes);i++) {
+            driver.findElement(By.xpath("//h1[text()='todos']//following-sibling::input")).sendKeys(data);
+        }
+        driver.findElement(By.xpath("//h1[text()='todos']//following-sibling::input")).sendKeys(Keys.ENTER);
+    }
+    @Then("user checks that there is a list of items {string} that are printed consecutively for {string} times")
+    public void user_checks_that_there_is_a_list_of_items_that_are_printed_consecutively_for_times(String data, String noOfTimes) {
+        data=data.repeat(Integer.parseInt(noOfTimes));
+        Assert.assertEquals(driver.findElement(By.xpath("//ul//label[text()='"+data+"']")).getText(),data);
+    }
+
+
     @Then("a new todo item named {string} is created")
     public void a_new_todo_item_named_is_created(String data) {
         // Write code here that turns the phrase above into concrete actions
