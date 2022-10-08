@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 import java.util.List;
@@ -67,6 +68,37 @@ public class TodoMvcSteps {
     public void user_checks_that_there_is_a_list_of_items_that_are_printed_consecutively_for_times(String data, String noOfTimes) {
         data=data.repeat(Integer.parseInt(noOfTimes));
         Assert.assertEquals(driver.findElement(By.xpath("//ul//label[text()='"+data+"']")).getText(),data);
+    }
+
+    @When("user double clicks on the list and edits it to {string}")
+    public void user_double_clicks_on_the_list_and_edits_it_to(String data) {
+
+        Actions act = new Actions(driver);
+       WebElement div= driver.findElement(By.xpath("//ul//div"));
+        act.doubleClick(div)
+        .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.BACK_SPACE)
+                .sendKeys(data,Keys.ENTER)
+                .build()
+                .perform();
+    }
+
+    @When("user double clicks on item number {string} in the list and edits it to {string}")
+    public void user_double_clicks_on_item_number_in_the_list_and_edits_it_to(String index, String data) {
+        // Write code here that turns the phrase above into concrete actions
+        Actions act = new Actions(driver);
+        List<WebElement> div= driver.findElements(By.xpath("//ul//div"));
+        WebElement divItem = div.get(Integer.parseInt(index)-1);
+        act.doubleClick(divItem)
+                .keyDown(Keys.CONTROL)
+                .sendKeys("a")
+                .keyUp(Keys.CONTROL)
+                .sendKeys(Keys.BACK_SPACE)
+                .sendKeys(data,Keys.ENTER)
+                .build()
+                .perform();
     }
 
 
