@@ -9,6 +9,5 @@ How to build project in Intelli J
 
 
 How to run test class
-1. Go to 'TodoMvcTest' test class
+1. Go to 'TestRunner.java' file in 'src/test/java/'
 2. Run test class to run all tests
-3. Right click on a test method and click Run to run individual test method
